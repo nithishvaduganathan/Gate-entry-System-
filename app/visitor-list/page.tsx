@@ -59,8 +59,7 @@ export default function VisitorListPage() {
   }
 
   const getStatusColor = (status: string) => {
-    const statusLower = status.toLowerCase()
-    switch (statusLower) {
+    switch (status) {
       case "approved":
         return "bg-green-100 text-green-800"
       case "pending":
@@ -125,9 +124,7 @@ export default function VisitorListPage() {
                       <User className="w-4 h-4 text-gray-500" />
                       <CardTitle className="text-base">{visitor.name}</CardTitle>
                     </div>
-                    <Badge className={getStatusColor(visitor.status)}>
-                      {visitor.status ? (visitor.status.charAt(0).toUpperCase() + visitor.status.slice(1)) : 'Unknown'}
-                    </Badge>
+                    <Badge className={getStatusColor(visitor.status)}>{visitor.status}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-3">
