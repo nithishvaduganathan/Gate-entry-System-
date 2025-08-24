@@ -5,8 +5,8 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "College Gate Entry System",
-  description: "Mobile gate entry application for college security",
+  title: "SINCET Gate Entry System",
+  description: "Gate entry application for college security",
   generator: "v0.app",
 }
 
