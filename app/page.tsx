@@ -88,16 +88,6 @@ export default function HomePage() {
               <span className="text-sm">Authorities</span>
             </Button>
           </Link>
-
-          <Link href="/vehicle-entry">
-            <Button
-              variant="outline"
-              className="w-full h-16 flex flex-col items-center justify-center space-y-1 bg-transparent"
-            >
-              <Bus className="w-4 h-4" />
-              <span className="text-xs">New Vehicle</span>
-            </Button>
-          </Link>
         </div>
 
         {/* Footer */}
