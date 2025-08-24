@@ -24,6 +24,7 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
 
+        <link rel="icon" href="sincet1.png" type="image/png" />
         <style>{`
           html {
             font-family: ${GeistSans.style.fontFamily};

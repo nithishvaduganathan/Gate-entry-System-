@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users, Bus, Shield, BarChart3, Bell } from "lucide-react"
+import { Users, Bus, BarChart3, Bell, Shield } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -9,11 +9,11 @@ export default function HomePage() {
       <div className="max-w-md mx-auto">
         {/* Header */}
         <div className="text-center mb-8 pt-8">
-          <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Shield className="w-8 h-8 text-white" />
+          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+            <img src="/sincet1.png" alt="SINCET Logo" className="w-12 h-12 object-contain" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Gate Entry System</h1>
-          <p className="text-gray-600">College Security Management</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">SINCET Gate Entry System</h1>
+          <p className="text-gray-600">College Security & Management</p>
         </div>
 
         {/* Main Actions */}
