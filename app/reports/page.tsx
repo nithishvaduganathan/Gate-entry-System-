@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ArrowLeft, Download, Filter, BarChart3, FileSpreadsheet } from "lucide-react"
 import Link from "next/link"
@@ -215,6 +216,39 @@ export default function ReportsPage() {
     })
   }
 
+  const getStatusColor = (status: string) => {
+    const statusLower = status.toLowerCase()
+    switch (statusLower) {
+      case "approved":
+        return "bg-green-100 text-green-800"
+      case "pending":
+        return "bg-yellow-100 text-yellow-800"
+      case "rejected":
+        return "bg-red-100 text-red-800"
+      case "exited":
+        return "bg-gray-100 text-gray-800"
+      default:
+        return "bg-gray-100 text-gray-800"
+    }
+  }
+
+  const getStatusTitleCase = (status: string) => {
+    if (!status) return "Unknown"
+    const statusLower = status.toLowerCase()
+    switch (statusLower) {
+      case "approved":
+        return "Approved"
+      case "pending":
+        return "Pending"
+      case "rejected":
+        return "Rejected"
+      case "exited":
+        return "Exited"
+      default:
+        return status.charAt(0).toUpperCase() + status.slice(1)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100 p-4">
       <div className="max-w-md mx-auto">
@@ -361,14 +395,23 @@ export default function ReportsPage() {
                     <div className="grid grid-cols-3 gap-2 text-center text-sm">
                       <div>
                         <div className="font-semibold text-green-600">{reportData.summary.approvedVisitors}</div>
+                        <Badge className={getStatusColor("approved")}>
+                          {getStatusTitleCase("approved")}
+                        </Badge>
                         <div className="text-gray-600">Approved</div>
                       </div>
                       <div>
                         <div className="font-semibold text-yellow-600">{reportData.summary.pendingVisitors}</div>
+                        <Badge className={getStatusColor("pending")}>
+                          {getStatusTitleCase("pending")}
+                        </Badge>
                         <div className="text-gray-600">Pending</div>
                       </div>
                       <div>
                         <div className="font-semibold text-red-600">{reportData.summary.rejectedVisitors}</div>
+                        <Badge className={getStatusColor("rejected")}>
+                          {getStatusTitleCase("rejected")}
+                        </Badge>
                         <div className="text-gray-600">Rejected</div>
                       </div>
                     </div>

@@ -166,19 +166,18 @@ export default function DashboardPage() {
   }
 
   const getStatusColor = (status: string) => {
-    switch (status) {
+    const statusLower = status.toLowerCase()
+    switch (statusLower) {
       case "approved":
-        return "bg-green-100 text-green-800"
+        return "bg-green-100 text-green-800 hover:bg-green-100"
       case "pending":
-        return "bg-yellow-100 text-yellow-800"
+        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-100"
       case "rejected":
-        return "bg-red-100 text-red-800"
-      case "entered":
-        return "bg-blue-100 text-blue-800"
+        return "bg-red-100 text-red-800 hover:bg-red-100"
       case "exited":
-        return "bg-gray-100 text-gray-800"
+        return "bg-gray-100 text-gray-800 hover:bg-gray-100"
       default:
-        return "bg-gray-100 text-gray-800"
+        return "bg-gray-100 text-gray-800 hover:bg-gray-100"
     }
   }
 
@@ -318,7 +317,7 @@ export default function DashboardPage() {
                     </div>
                     {activity.status && (
                       <Badge className={getStatusColor(activity.status)} size="sm">
-                        {activity.status}
+                        {activity.status.charAt(0).toUpperCase() + activity.status.slice(1)}
                       </Badge>
                     )}
                   </div>
